@@ -1,0 +1,74 @@
+.chair-type {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  margin-left: 30px;
+  margin-top: 30px;
+  row-gap: 15px;
+  margin-bottom: 30px;
+}
+.chair-name {
+  font-weight: bold;
+}
+
+.chair-picture img {
+  margin-top: 5px;
+  width: 180px;
+  margin-left: 10px;
+  border-radius: 5px;
+  height: 160px;
+}
+.chair-info {
+  box-shadow: 1px 1px 4px gray;
+  width: 200px;
+  border-radius: 5px;
+  padding: 5px 0;
+}
+.chair-info:hover {
+  background-color: #dad7cd;
+}
+.chair-price {
+  font-size: 14px;
+  color: rgb(104, 102, 102);
+}
+.buy {
+  border: none;
+  padding: 3px 8px;
+  border-radius: 3px;
+  margin-left: 13px;
+  background-color: rgb(42, 187, 232);
+  cursor: pointer;
+  color: white;
+}
+.buy:hover {
+  background-color: rgb(20, 131, 164);
+}
+.add-to-cart {
+  border: none;
+  padding: 5px 8px;
+  border-radius: 3px;
+  margin-left: 5px;
+  background-color: rgb(245, 114, 36);
+  cursor: pointer;
+  color: white;
+}
+.add-to-cart:hover {
+  background-color: rgb(207, 98, 34);
+}
+.chair-description p {
+  margin-left: 13px;
+  margin-top: 3px;
+  margin-bottom: 3px;
+}
+.chair-description button {
+  margin-bottom: 8px;
+}
+.seemore {
+  margin-bottom: 10px;
+}
+.seemore a {
+  margin-left: 51%;
+  color: #fb5607;
+}
+.seemore a:hover {
+  text-decoration: underline;
+}
