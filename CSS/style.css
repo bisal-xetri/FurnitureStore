@@ -83,10 +83,24 @@ input::placeholder {
   width: 40px;
   background-color: rgb(42, 187, 232);
   cursor: pointer;
+  position: relative;
+
 }
 .trolley-icon {
-  height: 15px;
+  height: 20px;
+  width: 20px;
   padding: 10px;
+
+  
+}
+.add-to-cart-count {
+    position: absolute;
+    top: 5px;
+    left: 20px;
+    font-size: 1.8vh;
+    color: antiquewhite;
+   z-index: 3;
+   
 }
 .wallpaper {
   height: 400px;

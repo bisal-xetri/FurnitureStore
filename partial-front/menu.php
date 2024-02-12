@@ -38,6 +38,8 @@
         <div class="trolley">
             <button class="trolley-button">
                 <img class="trolley-icon" src="Image/basket.png" alt="" />
+                <div class="add-to-cart-count">0</div>
             </button>
+
         </div>
     </div>
