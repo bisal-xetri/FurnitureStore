@@ -46,7 +46,7 @@
       </div>
       <div class="detail-buy">
         <button class="buy-option">Buy Now</button>
-        <button class="addtocart-option">Add to Cart</button>
+        <button class="addtocart-option js-add-to-cart" data-product-id="<?php echo $id; ?>">Add to Cart</button>
       </div>
     </div>
   <?php

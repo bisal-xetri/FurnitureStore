@@ -95,12 +95,14 @@ input::placeholder {
 }
 .add-to-cart-count {
     position: absolute;
-    top: 5px;
-    left: 20px;
-    font-size: 1.8vh;
+    top: 3px;
+    left: 17px;
+    font-size: 1.2vh;
     color: antiquewhite;
    z-index: 3;
-   
+   background-color: #fb5607;
+   padding: 2px 4px;
+   border-radius: 50%;
 }
 .wallpaper {
   height: 400px;

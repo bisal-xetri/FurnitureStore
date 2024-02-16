@@ -69,7 +69,7 @@
             echo "<div class='error'>Image not available</div>";
           } else {
           ?>
-           <a href="<?php echo SITEURL; ?>furniture-detail.php?image_id=<?php echo $id; ?>">
+            <a href="<?php echo SITEURL; ?>furniture-detail.php?image_id=<?php echo $id; ?>">
               <img src="<?php echo SITEURL; ?>Image/furniture/<?php echo $image_name; ?>" alt="" />
             </a>
           <?php
@@ -82,7 +82,7 @@
           <p class="chair-name"><?php echo $title; ?></p>
           <p class="chair-price">Rs.<?php echo $price; ?></p>
           <a href="<?php echo SITEURL;  ?>order.php?furniture_id=<?php echo $id; ?>" class="buy">buy</a>
-          <button class="add-to-cart">add to cart</button>
+          <button class="add-to-cart js-add-to-cart" data-product-id="<?php echo $id; ?>">add to cart</button>
         </div>
       </div>
   <?php

@@ -18,6 +18,8 @@
         <p>All rights reserved. Designed By <a href="#">Bishal Dhakal</a></p>
     </div>
 </section>
+<script src="javascript/cart.js"></script>
+<script type="module" src="javascript/addtocart.js"></script>
 </body>
 
 </html>
