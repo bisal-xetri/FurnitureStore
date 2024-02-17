@@ -31,11 +31,11 @@
             <table class="tbl-30">
                 <tr>
                     <td>Full Name:</td>
-                    <td><input type="text" name="full_name" value="<?php echo $full_name; ?>"></td>
+                    <td><input class='update-input' type="text" name="full_name" value="<?php echo $full_name; ?>"></td>
                 </tr>
                 <tr>
                     <td>Username:</td>
-                    <td><input type="text" name="username" value="<?php echo $username; ?>"></td>
+                    <td><input class='update-input' type="text" name="username" value="<?php echo $username; ?>"></td>
                 </tr>
                 <tr>
                     <td colspan="2">

@@ -9,7 +9,16 @@
   padding: 1%;
   width: 80%;
   margin: 0 auto;
+ 
 }
+.wrapper h1{
+  margin-left: -10%;
+}
+.menu{
+  background-color:#fd9644;
+
+}
+
 .text-center {
   text-align: center;
 }
@@ -29,10 +38,10 @@
 }
 .menu ul li a {
   font-weight: bold;
-  color: rgb(255, 127, 80);
+  color:white;
 }
 .menu ul li a:hover {
-  color: rgb(255, 99, 72);
+ color:black;
 }
 /* Css for main contrent */
 .main-content {
@@ -44,6 +53,7 @@
 }
 .error {
   color: rgb(255, 71, 87);
+
 }
 .col-4 {
   width: 18%;
@@ -54,18 +64,35 @@
   float: left;
 }
 .tbl-full {
+  margin-left: -11%;
   width: 100%;
+  border: 1px solid rgb(205, 197, 197);
 }
 .tbl-full tr th {
   border-bottom: 1px solid black;
-  padding: 1%;
+padding: 1%;
+ 
   text-align: left;
+  font-size: 15px;
+  border: 1px solid rgb(205, 197, 197);
 }
 .tbl-full tr td {
-  padding: 1%;
+  padding:3px 20px;
+  text-align: left;
+  font-size: 14px;
+  border: 1px solid rgb(205, 197, 197);
+ 
 }
 .tbl-30 {
   width: 30%;
+}
+.update-input{
+  padding: 3%;
+  border-radius: 5px;
+  border: none;
+  margin: 3%;
+  width: 100%;
+  background-color: #dbe1e9;
 }
 
 .btn-primary {

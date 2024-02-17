@@ -10,15 +10,15 @@
              <table class="tbl-30">
                  <tr>
                      <td>Current Password:</td>
-                     <td><input type="password" name="current_password" value="" placeholder="current password"></td>
+                     <td><input class='update-input' type="password" name="current_password" value="" placeholder="current password"></td>
                  </tr>
                  <tr>
                      <td>New Password:</td>
-                     <td><input type="password" name="new_password" value="" placeholder="new password"></td>
+                     <td><input class='update-input' type="password" name="new_password" value="" placeholder="new password"></td>
                  </tr>
                  <tr>
                      <td>Confirm Password:</td>
-                     <td><input type="password" name="confirm_password" value="" placeholder="confirm password"></td>
+                     <td><input class='update-input' type="password" name="confirm_password" value="" placeholder="confirm password"></td>
                  </tr>
                  <tr>
                      <td colspan="2">

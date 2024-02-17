@@ -9,6 +9,12 @@
     <h2>"Elevate Your living Standard"</h2>
     <a class="more" href="">See More...</a>
   </div>
+  <?php
+  if (isset($_SESSION['order'])) {
+    echo $_SESSION['order'];
+    unset($_SESSION['order']);
+  }
+  ?>
 </div>
 <div class=explore-div>
   <h3><a class="explore" href="">Explore Now</a></h3>

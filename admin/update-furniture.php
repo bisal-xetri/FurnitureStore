@@ -26,16 +26,16 @@ if (isset($_GET['id'])) {
                 <tr>
                     <td>Title:
                     </td>
-                    <td><input type="text" name="title" placeholder="" value="<?php echo $title; ?>"></td>
+                    <td><input class='update-input' type="text" name="title" placeholder="" value="<?php echo $title; ?>"></td>
                 </tr>
                 <tr>
                     <td>Description:
                     </td>
-                    <td><textarea name="description" id="" cols="20" rows="5"><?php echo $description; ?></textarea></td>
+                    <td><textarea class='update-input' name="description" id="" cols="20" rows="5"><?php echo $description; ?></textarea></td>
                 </tr>
                 <tr>
                     <td>Price:</td>
-                    <td><input type="number" value="<?php echo $price ?>" name="price"></td>
+                    <td><input class='update-input' type="number" value="<?php echo $price ?>" name="price"></td>
                 </tr>
                 <tr>
                     <td>Current Image:</td>
@@ -87,7 +87,7 @@ if (isset($_GET['id'])) {
 
                         </select></td>
                 </tr>
-               
+
                 <tr>
                     <td>Featured:</td>
                     <td><input <?php if ($featured == 'Yes') {
