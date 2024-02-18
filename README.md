@@ -5,6 +5,6 @@ I'm Bishal, a passionate web developer with a love for creating beautiful and fu
 - 🌱 Constantly learning and exploring new web technologies
 ### Skills
 - 💻 Front-end: HTML, CSS, JavaScript, React
-- 💻 Back-end: 
+- 💻 Back-end: PHP 
 - 💻 Databases: MySQL, MongoDB
 - 💻 Other: 
