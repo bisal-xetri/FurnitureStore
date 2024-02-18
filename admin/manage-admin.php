@@ -69,7 +69,7 @@
                             <td><?php echo $sn++; ?>.</td>
                             <td><?php echo $full_name; ?></td>
                             <td><?php echo $username; ?></td>
-                            <td>
+                            <td colspan="">
                                 <a class="btn-primary" href="<?php echo SITEURL; ?>admin/update-password.php?id=<?php echo $id ?>"> Change Password</a>
                                 <a class="btn-secondary" href="<?php echo SITEURL; ?>admin/update-admin.php?id=<?php echo $id ?>"> Update Admin</a>
                                 <a class="btn-danger" href="<?php echo SITEURL; ?>admin/delete-admin.php?id=<?php echo $id ?>"> Delete Admin</a>

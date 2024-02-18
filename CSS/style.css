@@ -117,6 +117,7 @@ input::placeholder {
 }
 .sologon {
   position: absolute;
+  
   color: #fb5607;
   top: 50%;
   left: 50%;
@@ -137,4 +138,8 @@ input::placeholder {
 }
 .explore:hover {
   background-color: rgb(198, 76, 6);
+}
+.recommended-title{
+  margin-left: 20px;
+  margin-top: 20px;
 }
