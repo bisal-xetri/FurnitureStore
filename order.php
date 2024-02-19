@@ -1,4 +1,5 @@
 <?php include('config/constant.php') ?>
+
 <?php include('partial-front/menu.php') ?>
 
 <link rel="stylesheet" href="CSS/buy.css">
@@ -51,7 +52,7 @@ if (isset($_GET['furniture_id'])) {
                     <input type="hidden" name="price" value="<?php echo $price ?>">
 
                     <div class="order-label">Quantity</div>
-                    <input type="number" name="qty" class="input-responsive" value="1" required />
+                    <input type="number" name="qty" class="input-responsive" min="0" value="1" required />
 
                 </div>
             </div>

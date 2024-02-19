@@ -35,7 +35,7 @@ if (isset($_GET['id'])) {
                 </tr>
                 <tr>
                     <td>Price:</td>
-                    <td><input class='update-input' type="number" value="<?php echo $price ?>" name="price"></td>
+                    <td><input class='update-input' type="number" min="0" value="<?php echo $price ?>" name="price"></td>
                 </tr>
                 <tr>
                     <td>Current Image:</td>

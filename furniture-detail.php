@@ -63,7 +63,7 @@
   <?php
   $sql2 = "SELECT * 
   FROM tbl_furniture 
-  WHERE active='YES' AND Featured='YES' 
+  WHERE active='YES' AND featured='YES' 
     AND id NOT IN (SELECT id FROM tbl_furniture WHERE id=$image_id)
   ORDER BY RAND() 
   LIMIT 5";

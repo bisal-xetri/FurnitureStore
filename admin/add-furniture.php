@@ -22,7 +22,7 @@
                 </tr>
                 <tr>
                     <td>Price:</td>
-                    <td><input type="number" name="price" placeholder=""></td>
+                    <td><input type="number" min="0" name="price" placeholder=""></td>
                 </tr>
                 <tr>
                     <td>Select Image:</td>

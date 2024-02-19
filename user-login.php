@@ -66,7 +66,7 @@ if (isset($_POST['submit'])) {
         if ($count == 1) {
             $_SESSION['login'] = "<div class='success'>Login Successfully</div>";
             $_SESSION['user'] = $username; //to check if user is logged in or not an logout will unset the
-            header("Location:" . SITEURL . "");
+            header("Location:" . SITEURL . "order.php");
         } else {
             //session message
             $_SESSION['login'] = "<div class='error'>User name or password did't match.</div>";
