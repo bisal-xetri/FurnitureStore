@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,10 +9,32 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="CSS/style.css" />
+
     <link rel="stylesheet" href="CSS/furniture-list.css">
     <link rel="stylesheet" href="CSS/chair.css">
+
     <link rel="stylesheet" href="CSS/furniture-details.css">
+
 </head>
+<?php
+// Assuming $con is your database connection
+if (isset($_SESSION['username'])) {
+    $cust_id = $_SESSION['id'];
+    $query = "SELECT * FROM cart WHERE user_id=$cust_id";
+    $run = mysqli_query($con, $query);
+
+    if ($run) {
+        $count = mysqli_num_rows($run);
+    } else {
+        // Handle query execution failure
+        echo "Error: " . mysqli_error($con);
+        $count = 0;
+    }
+} else {
+    $count = 0;
+}
+?>
+
 
 <body>
     <div class="header">
@@ -33,13 +54,27 @@
             <li><a href="<?php echo SITEURL; ?>products.php">Products</a></li>
             <li><a href="#">About Us</a></li>
             <li><a href="#">Contact Us</a></li>
-            <li><a href="<?php echo SITEURL; ?>user-signup.php">Sign In</a></li>
-            <li><a href="<?php echo SITEURL; ?>user-login.php">Log in</a></li>
+            <?php if (!isset($_SESSION['username'])) {
+
+
+            ?>
+                <li><a href="<?php echo SITEURL; ?>user-signup.php">Sign In</a></li>
+                <li><a href="<?php echo SITEURL; ?>user-login.php">Log in</a></li>
+            <?php
+            }
+
+            if (isset($_SESSION['username'])) {
+
+
+            ?>
+                <li><a href="<?php echo SITEURL; ?>customer/index.php">Account</a></li>
+            <?php }
+            ?>
         </div>
-        <a href="#" class="trolley">
+        <a href="cart.php" class="trolley">
             <button class="trolley-button">
                 <img class="trolley-icon" src="Image/basket.png" alt="" />
-                <div class="add-to-cart-count js-cart-quantity">0</div>
+                <div class="add-to-cart-count js-cart-quantity"><?php echo $count; ?></div>
             </button>
 
         </a>

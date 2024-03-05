@@ -53,25 +53,39 @@
 
 </html>
 <?php
-//check whether submit button is clicked or not
+// Check whether submit button is clicked or not
 if (isset($_POST['submit'])) {
-    //process for login form
+    // Process for login form
     $username = mysqli_real_escape_string($con, $_POST['username']);
     $password = sha1($_POST['password']);
-    //check aql to whether user with username and password exists or not
+
+    // Check SQL to see whether a user with the username and password exists or not
     $sql = "SELECT * FROM tbl_user WHERE username = '$username' AND password = '$password'";
     $res = mysqli_query($con, $sql);
     if ($res) {
         $count = mysqli_num_rows($res);
         if ($count == 1) {
+            // Fetch user data
+            $row = mysqli_fetch_assoc($res);
+            $user_id = $row['id']; // Assuming 'id' is the column name for the user ID in your table
+
+            // Set session variables
             $_SESSION['login'] = "<div class='success'>Login Successfully</div>";
-            $_SESSION['user'] = $username; //to check if user is logged in or not an logout will unset the
-            header("Location:" . SITEURL . "order.php");
+            $_SESSION['username'] = $username;
+            $_SESSION['id'] = $user_id; // Set user ID session variable
+
+            // Redirect to the appropriate page
+            header("Location:" . SITEURL . "customer/index.php");
+            exit(); // Exit after redirection
         } else {
-            //session message
-            $_SESSION['login'] = "<div class='error'>User name or password did't match.</div>";
+            // Session message
+            $_SESSION['login'] = "<div class='error'>Username or password didn't match.</div>";
             header("Location:" . SITEURL . "user-login.php");
+            exit(); // Exit after redirection
         }
+    } else {
+        // Handle query execution failure
+        echo "Error executing query: " . mysqli_error($con);
     }
 }
 

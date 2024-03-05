@@ -1,5 +1,48 @@
 <?php include('config/constant.php'); ?>
 <?php include('partial-front/menu.php'); ?>
+<?php
+// Start or resume the session
+
+// Check if the user is logged in
+if (isset($_SESSION['username'])) {
+    // Check if 'id' session variable is set
+    if (isset($_SESSION['id'])) {
+        $custid = $_SESSION['id'];
+
+        if (isset($_GET['cart_id'])) {
+            $p_id = $_GET['cart_id'];
+
+            $sel_cart = "SELECT * FROM cart WHERE user_id = $custid AND product_id = $p_id";
+            $run_cart = mysqli_query($con, $sel_cart);
+
+            if ($run_cart) {
+                if (mysqli_num_rows($run_cart) == 0) {
+                    $cart_query = "INSERT INTO `cart`(`user_id`, `product_id`,quantity) VALUES ($custid,$p_id,1)";
+                    if (mysqli_query($con, $cart_query)) {
+                        header('location:furniture-items.php');
+                        exit; // Exit after redirection
+                    }
+                } else {
+                    while ($row = mysqli_fetch_array($run_cart)) {
+                        $exist_pro_id = $row['product_id'];
+                        if ($p_id == $exist_pro_id) {
+                            $error = "<script> alert('⚠️ This product is already in your cart  ');</script>";
+                        }
+                    }
+                }
+            } else {
+                // Handle query execution failure
+                echo "Error executing query: " . mysqli_error($con);
+            }
+        }
+    } else {
+        // Handle 'id' session variable not being set
+        echo "Warning: 'id' session variable is not set";
+    }
+} else {
+    echo "<script> function a(){alert('⚠️ Login is required to add this product into cart');}</script>";
+}
+?>
 
 <div class="chair-type">
     <?php
@@ -34,7 +77,7 @@
                     <p class="chair-name"><?php echo $title; ?></p>
                     <p class="chair-price">Rs.<?php echo $price; ?></p>
                     <a href="<?php echo SITEURL;  ?>order.php?furniture_id=<?php echo $id; ?>" class="buy">buy</a>
-                    <button class="add-to-cart js-add-to-cart" data-product-id="<?php echo $id; ?>">add to cart</button>
+                    <a href="furniture-items.php?cart_id=<?php echo $id; ?>" class="add-to-cart js-add-to-cart" onclick="a()">add to cart</a>
                 </div>
             </div>
     <?php

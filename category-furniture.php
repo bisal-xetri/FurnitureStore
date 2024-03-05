@@ -51,7 +51,7 @@ if (isset($_GET['category_id'])) {
                     <p class="chair-name"><?php echo $title; ?></p>
                     <p class="chair-price">Rs.<?php echo $price; ?></p>
                     <a href="<?php echo SITEURL;  ?>order.php?furniture_id=<?php echo $id; ?>" class="buy">buy</a>
-                    <button class="add-to-cart js-add-to-cart" data-product-id="<?php echo $id; ?>">add to cart</button>
+                    <a href="index.php?cart_id=<?php echo $id; ?>" class="add-to-cart js-add-to-cart" onclick="a()">add to cart</a>
                 </div>
             </div>
     <?php

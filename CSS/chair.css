@@ -21,7 +21,7 @@
   box-shadow: 1px 1px 4px gray;
   width: 200px;
   border-radius: 5px;
-  padding: 5px 0;
+  padding: 10px 0;
 }
 .chair-info:hover {
   background-color: #dad7cd;
@@ -44,12 +44,14 @@
 }
 .add-to-cart {
   border: none;
-  padding: 5px 8px;
+  padding: 3px 8px;
   border-radius: 3px;
-  margin-left: 5px;
+  margin-left: 13px;
   background-color: rgb(245, 114, 36);
   cursor: pointer;
   color: white;
+
+ 
 }
 .add-to-cart:hover {
   background-color: rgb(207, 98, 34);
