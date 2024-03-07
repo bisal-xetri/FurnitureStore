@@ -1,6 +1,7 @@
 .cart-detail {
     display : flex;
     width : 70%;
+    margin-top: 30px;
     justify-content : space-between;
     margin-left : 100px;
     }

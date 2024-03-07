@@ -97,7 +97,7 @@ if (isset($_SESSION['username'])) {
                 <div class="chair-description">
                     <p class="chair-name"><?php echo $title; ?></p>
                     <p class="chair-price">Rs.<?php echo $price; ?></p>
-                    <a href="<?php echo SITEURL;  ?>order.php?furniture_id=<?php echo $id; ?>" class="buy">buy</a>
+                    <a href="<?php echo SITEURL;  ?>order.php?furniture_id=<?php echo $id; ?>" onclick="a()" class="buy">buy</a>
                     <a href="furniture-search.php?cart_id=<?php echo $id; ?>" class="add-to-cart js-add-to-cart" onclick="a()">add to cart</a>
                 </div>
             </div>

@@ -37,16 +37,14 @@
   border-bottom: 1px solid gray;
   width: 600px;
 }
-.detail-quantity {
-  border: 1px solid lightgrey;
+.detail-quantity input {
+  border: 0.5px solid lightgrey;
   width: 145px;
+  padding: 5px;
+  border-radius: 5px;
+
 }
-.detail-quantity button,
-.detail-quantity span {
-  padding: 5px 17px;
-  border: none;
-  font-size: 20px;
-}
+
 .detail-buy {
   display: flex;
   align-items: center;

@@ -8,7 +8,9 @@ include_once('include/dbcon.php'); ?>
   <meta charset="UTF-8">
   <title>E-Commerce</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../../CSS/style.css">
+  <link rel="stylesheet" href="../CSS/style.css">
+  <link rel="stylesheet" href="../CSS/customer-info.css">
+  <link rel="stylesheet" href="../CSS/furniture-list.css">
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </head>
 
@@ -35,13 +37,13 @@ if (isset($_SESSION['username'])) {
 <body>
   <div class="header">
     <div class="title">
-      <h1><a href="<?php echo SITEURL; ?>">Himlayan Furniture</a></h1>
+      <h1><a href="<?php echo SITEURL; ?>">Himalayan Furniture</a></h1>
     </div>
 
     <form class="search" action="<?php echo SITEURL; ?>furniture-search.php" method="POST">
       <input class="search-box" name="search" type="search" placeholder="search" required />
       <button class="search-button" type="submit" name="submit">
-        <img class="search-icon" src="Image/searchicon.png" alt="" />
+        <img class="search-icon" src="../Image/searchicon.png" alt="" />
       </button>
     </form>
 
@@ -59,9 +61,9 @@ if (isset($_SESSION['username'])) {
       <?php }
       ?>
     </div>
-    <a href="cart.php" class="trolley">
+    <a href="../cart.php" class="trolley">
       <button class="trolley-button">
-        <img class="trolley-icon" src="Image/basket.png" alt="" />
+        <img class="trolley-icon" src="../Image/basket.png" alt="" />
         <div class="add-to-cart-count js-cart-quantity"><?php echo $count; ?></div>
       </button>
 

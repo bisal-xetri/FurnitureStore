@@ -5,43 +5,27 @@ if (!isset($_SESSION['username'])) {
 }
 ?>
 
-<div class="jumbotron bg-secondary">
-  <h1 class="text-center text-white mt-5">Account</h1>
+
+
+<div class="account-info">
+
+  Account information
+
 </div>
+<div class="user-information">
+  <?php include('include/sidebar.php'); ?>
+  <div class="user-detail-info">
+    <h1>My Account</h1>
+    <div><a class="user-link" href="orders.php">ORDERS</a></div>
+    <p>Check the status and information regarding your online orders</p>
 
-<div class="container mt-5 mb-5">
+    <div><a class="user-link" href="">PERSONAL DETAILS</a></div>
+    <p>You can access and modify your personal details (name, billing address, telephone number, etc.) in order to speed up your future purchases and notify us of changes in your contact details.</p>
 
-  <div class="row">
-
-    <div class="col-md-3">
-      <?php include('include/sidebar.php'); ?>
-    </div>
-
-    <div class="col-md-9">
-      <h3>My Account:</h3>
-      <hr>
-
-      <a href="orders.php">
-        <h6 class="text-primary">ORDERS</h6>
-      </a>
-      <p>Check the status and information regarding your online orders</p>
-
-      <a href="personal-detail.php">
-        <h6 class="text-primary">PERSONAL DETAILS</h6>
-      </a>
-      <p>You can access and modify your personal details (name, billing address, telephone number, etc.) in order to speed up your
-        future purchases and notify us of changes in your contact details.</p>
-
-      <a href="access-detail.php">
-        <h6 class="text-primary">ACCESS DETAILS</h6>
-      </a>
-      <p>You can change your access details (password ).</p>
-
-    </div>
+    <div><a class="user-link" href="">MANAGE ACCOUNT</a></div>
+    <p>You can change your access details (password ).</p>
   </div>
-
 </div>
-
 
 
 <?php include('include/footer.php') ?>

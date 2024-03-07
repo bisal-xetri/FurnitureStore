@@ -4,26 +4,37 @@
 
 <link rel="stylesheet" href="CSS/buy.css">
 <?php
-if (isset($_GET['furniture_id'])) {
-    //get the fourniure id and 
-    $furniture_id = $_GET['furniture_id'];
-    //get details of the selected
-    $sql = "SELECT* FROM tbl_furniture WHERE id = $furniture_id";
-    $res = mysqli_query($con, $sql);
-    $count = mysqli_num_rows($res);
-    if ($count == 1) {
-        $row = mysqli_fetch_assoc($res);
-        $title = $row['title'];
-        $price = $row['price'];
-        $image_name = $row['image_name'];
-    } else {
-        header("Location:" . SITEURL);
+if (isset($_SESSION['username'])) {
+    // Check if 'id' session variable is set
+    if (isset($_SESSION['id'])) {
+        $custid = $_SESSION['id'];
+
+        if (isset($_GET['furniture_id'])) {
+            //get the furniture id
+            $furniture_id = $_GET['furniture_id'];
+            //get details of the selected furniture
+            $sql = "SELECT * FROM tbl_furniture WHERE id = $furniture_id";
+            $res = mysqli_query($con, $sql);
+            $count = mysqli_num_rows($res);
+            if ($count == 1) {
+                $row = mysqli_fetch_assoc($res);
+                $title = $row['title'];
+                $price = $row['price'];
+                $image_name = $row['image_name'];
+            } else {
+
+                echo "<script> function a(){alert('⚠️ Login is required to buy this product');}</script>";
+                header("Location:" . SITEURL);
+            }
+        }
     }
 } else {
-    //redirect tohome
+    //redirect to home
+    echo "<script> function a(){alert('⚠️ Login is required to buy this product');}</script>";
     header('Location:' . SITEURL);
 }
 ?>
+
 
 <div class="main">
     <form action="" method="post" class="order">
@@ -58,18 +69,30 @@ if (isset($_GET['furniture_id'])) {
             </div>
         </fieldset>
         <fieldset class="user-details">
+            <?php
+            $sql3 = "SELECT * FROM tbl_user WHERE id = $custid";
+            $res3 = mysqli_query($con, $sql3);
+            $count3 = mysqli_num_rows($res3);
+            if ($count3 == 1) {
+                $row3 = mysqli_fetch_array($res3);
+                $name = $row3['full_name'];
+                $phone = $row3['phone'];
+                $email = $row3['email'];
+                $address = $row3['address'];
+            }
+            ?>
             <legend>Delivery Details</legend>
             <div class="order-label">Full Name</div>
-            <input type="text" name="full-name" placeholder="E.g. Bishal Dhakal" class="input-responsive" required />
+            <input type="text" name="full-name" value="<?php echo $name; ?>" placeholder="E.g. Bishal Dhakal" class="input-responsive" required />
 
             <div class="order-label">Phone Number</div>
-            <input type="tel" name="contact" placeholder="E.g. 9843xxxxxx" class="input-responsive" required />
+            <input type="tel" name="contact" value="<?php echo $phone; ?>" placeholder="E.g. 9843xxxxxx" class="input-responsive" required />
 
             <div class="order-label">Email</div>
-            <input type="email" name="email" placeholder="E.g. bishal@gmail.com" class="input-responsive" required />
+            <input type="email" name="email" value="<?php echo $email; ?>" placeholder="E.g. bishal@gmail.com" class="input-responsive" required />
 
             <div class="order-label">Address</div>
-            <textarea name="address" rows="5" placeholder="E.g. Street, City, Country" class="input-responsive" required></textarea>
+            <textarea name="address" rows="5" placeholder="E.g. Street, City, Country" class="input-responsive" required><?php echo $address; ?></textarea>
 
         </fieldset>
 

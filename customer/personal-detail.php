@@ -1,50 +1,49 @@
 <?php
 include('include/header.php');
 
-if (!isset($_SESSION['email'])) {
-  header('location:../sign-in.php');
+if (!isset($_SESSION['username'])) {
+  header('location:../user-login.php');
 }
 
 if (isset($_SESSION['username'])) {
 
   $customer_id    = $_SESSION['id'];
 
-  $query = "SELECT * FROM customer WHERE cust_id=$customer_id";
+  $query = "SELECT * FROM tbl_user WHERE id=$customer_id";
   $run   = mysqli_query($con, $query);
-  $row = mysqli_fetch_array($run);
 
-  $cust_name = $row['cust_name'];
-  $cust_email = $row['cust_email'];
-  $cust_add = $row['cust_add'];
-  $cust_city = $row['cust_city'];
-  $cust_pcode = $row['cust_postalcode'];
-  $cust_number = $row['cust_number'];
+  if (!$run) {
+    die('Error in SQL query: ' . mysqli_error($con));
+  }
 
+  $row = mysqli_fetch_assoc($run);
+
+  $cust_name = $row['full_name'];
+  $cust_email = $row['email'];
+  $cust_add = $row['address'];
+  $cust_number = $row['phone'];
 
   if (isset($_POST['update'])) {
+
     $fullname = $_POST['fullname'];
     echo $email    = $_POST['email'];
     $address  = $_POST['address'];
-    $city     = $_POST['city'];
-    $code     = $_POST['code'];
     $number   = $_POST['phone_number'];
 
-    $up_query = "UPDATE `customer` SET `cust_name`='$fullname',
-     `cust_add`='$address',`cust_city`='$city',`cust_postalcode`='$code',`cust_number`='$number' 
-       WHERE cust_id=$customer_id ";
-    if (mysqli_query($con, $up_query)) {
+    $up_query = "UPDATE `tbl_user` SET `full_name`='$fullname',
+     `address`='$address', `phone`='$number'
+       WHERE id=$customer_id ";
+    $update_run = mysqli_query($con, $up_query);
 
-      $_SESSION['msg'] = "<div class='alert alert-success alert-dismissible fade show pt-1 pb-1 pl-3'  role='alert'>
-          <strong><i class='fas fa-check-circle'></i> Congratulation! </strong>Your Account has been updated.
-          <button type='button' class='close p-2' data-dismiss='alert' aria-label='Close'>
-           <span  aria-hidden='true'>&times;</span>
-          </button>
-           </div>";
-      header('location:personal-detail.php');
+    if (!$update_run) {
+      die('Error in UPDATE query: ' . mysqli_error($con));
     }
+
+    $_SESSION['msg'] = "<div style='color:green; text-align:center'>Update Successfully</div>";
+
+    header('location:personal-detail.php');
   }
 }
-
 ?>
 
 
@@ -52,75 +51,44 @@ if (isset($_SESSION['username'])) {
 
 
 
-<div class="jumbotron bg-secondary">
-  <h1 class="text-center text-white mt-5">Personal Detail</h1>
+
+
+<div class="account-info">
+
+  Personal information
+
 </div>
-
-<div class="container mt-5">
-  <div class="row">
-
-    <div class="col-md-3">
-      <?php include('include/sidebar.php'); ?>
-    </div>
-
-    <div class="col-md-9">
-      <h3>Personal Details:</h3>
-      <hr>
-      <h6>CHANGE PERSONAL DETAILS</h6>
-      <p>You can access and modify your personal details (name, billing address, telephone number, etc.)
-        in order to facilitate your future
-        purchases and to notify us of any change in your contact details.</p>
-
-      <?php
-
-      if (isset($_SESSION['msg'])) {
-        echo $_SESSION['msg'];
+<!-- <?php
+      if (isset($_SESSION['login'])) {
+        echo $_SESSION['login'];
+        unset($_SESSION['login']);
       }
-      ?>
-
-      <form method="post" class="w-75">
-
-        <div class="form-group ">
-          <input type="text" name="fullname" placeholder="Full Name" value="<?php echo $cust_name; ?>" class="form-control">
-        </div>
-
-        <div class="form-group">
-          <input type="text" name="email" placeholder="Email" class="form-control" value="<?php echo $cust_email; ?>" disabled>
-        </div>
+      ?> -->
+<div class="user-information">
+  <?php include('include/sidebar.php'); ?>
 
 
-        <div class="form-group">
-          <input type="text" name="address" placeholder="Address" value="<?php echo $cust_add; ?>" class="form-control">
-        </div>
+  <div class="user-detail-info">
+    <h3>CHANGE PERSONAL DETAILS</h3>
+    <p>You can access and modify your personal details (name, billing address, telephone number, etc.)
+      in order to facilitate your future
+      purchases and to notify us of any change in your contact details.</p>
 
-        <div class="row">
-          <div class="col-md-6 col-6">
-            <div class="form-group">
-              <input type="text" name="city" placeholder="City" value="<?php echo $cust_city; ?>" class="form-control">
-            </div>
-          </div>
+    <?php
 
-          <div class="col-md-6 col-6">
-            <div class="form-group">
-              <input type="number" name="code" placeholder="Postal code" value="<?php echo $cust_pcode; ?>" class="form-control">
-            </div>
-          </div>
+    if (isset($_SESSION['msg'])) {
+      echo $_SESSION['msg'];
+    }
+    ?>
 
-        </div>
-
-        <div class="form-group">
-          <input type="number" name="phone_number" placeholder="Phone Number" value="<?php echo $cust_number; ?>" class="form-control">
-        </div>
-
-        <div class="form-group text-center mt-4">
-          <input type="submit" name="update" class="btn btn-primary" value="Update">
-        </div>
-
-      </form>
-
-    </div>
+    <form action="" class="personal-detail-form" method="post">
+      <input type="text" name="fullname" placeholder="Full Name" value="<?php echo $cust_name; ?>" class="form-control"><br><br>
+      <input type="email" name="email" placeholder="Email" class="form-control" value="<?php echo $cust_email; ?>" disabled><br><br>
+      <input type="text" name="address" placeholder="Address" value="<?php echo $cust_add; ?>" class="form-control"><br><br>
+      <input type="number" name="phone_number" placeholder="Phone Number" value="<?php echo $cust_number; ?>" class="form-control"><br><br>
+      <input type="submit" name="update" class="btn-update" value="Update">
+    </form>
   </div>
 </div>
-
 
 <?php include('include/footer.php'); ?>

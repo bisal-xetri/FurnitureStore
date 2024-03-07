@@ -1,8 +1,8 @@
 <?php 
 include('include/header.php');
 
-if(!isset($_SESSION['email'])){
-    header('location:../sign-in.php');
+if (!isset($_SESSION['username'])) {
+  header('location:../user-login.php');
 }
 
 if(isset($_SESSION['email'])){

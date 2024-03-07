@@ -1,7 +1,7 @@
-  <div class="list-group">
-            <a href="index.php" class="list-group-item"><i class="fal fa-home ml-2"></i> Account </a>
-            <a href="orders.php" class="list-group-item"><i class="fal fa-box-open ml-2"></i> orders</a>
-            <a href="personal-detail.php" class="list-group-item"><i class="fal fa-user ml-2"></i>  Personal Details</a>
-            <a href="access-detail.php" class="list-group-item"><i class="fal fa-info-circle ml-2"></i> Access Details</a>
-            <a href="../sign-out.php" class="list-group-item"><i class="fal fa-sign-out ml-2"></i> Sign out</a>
-         </div>
+<div class="user-nav">
+  <div><img class="user-info-img" src="iconimage/home.png" alt=""><a class="user-link" href="index.php">Account</a></div>
+  <div><img class="user-info-img" src="iconimage/order1.png" alt=""><a class="user-link" href="orders.php">Orders</a></div>
+  <div> <img class="user-info-img" src="iconimage/person.png" alt=""> <a class="user-link" href="personal-detail.php">Personal Details</a></div>
+  <div> <img class="user-info-img" src="iconimage/info.png" alt=""><a class="user-link" href="">Manage Account</a></div>
+  <div> <img class="user-info-img" src="iconimage/logout.png" alt=""><a class=" user-link" href="../sign-out.php">Log Out</a></div>
+</div>
