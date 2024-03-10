@@ -26,6 +26,7 @@
 
     padding-top: 17px;
     margin-right: 50px;
+  height: 50%;
     width: 42%;
   }
 
@@ -107,6 +108,7 @@
     background-color: #0c93e7;
     color: white;
     cursor: pointer;
+    margin-top: 10px;
 }
 .btn-update:hover{
     background-color: #056eae;

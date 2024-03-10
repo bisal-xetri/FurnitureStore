@@ -18,6 +18,7 @@ if (isset($_SESSION['username'])) {
             $count = mysqli_num_rows($res);
             if ($count == 1) {
                 $row = mysqli_fetch_assoc($res);
+                $id = $row['id'];
                 $title = $row['title'];
                 $price = $row['price'];
                 $image_name = $row['image_name'];
@@ -123,14 +124,16 @@ if (isset($_SESSION['username'])) {
         customer_name='$customer_name',
         customer_contact='$customer_contact',
         customer_email='$customer_email',
-        customer_address='$customer_address'
+        customer_address='$customer_address',
+        customer_id=$custid,
+        product_id=$id
         ";
         $res2 = mysqli_query($con, $sql2);
         if ($res2) {
             $_SESSION['order'] = "<div class='success text-center' style='text-align:center;color:green;'>Furniture order Success.</div>";
             header("location:" . SITEURL);
         } else {
-            $_SESSION['order'] = "<div class='error' style='text-align:center;color:red;'>Failed to order Furniture.</div>";
+            $_SESSION['order'] = "<div class='error' style='text-align:center;color:red;'>Failed to order Furniture. " . mysqli_error($con) . "</div>";
             header("location:" . SITEURL);
         }
     } else {
