@@ -48,18 +48,22 @@ if (isset($_SESSION['username'])) {
 
 
 
-<div class="wallpaper">
-  <img class="wallpaper-img" src="Image/wallpaper2.jpg" alt="" />
-  <div class="sologon">
-    <h2>"Elevate Your living Standard"</h2>
-    <a class="more" href="">See More...</a>
+<div class="swiper mySwiper">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide"><img src="Image/wallpaper3.jpg" alt="" srcset=""></div>
+    <div class="swiper-slide"><img src="Image/wallpaper2.jpg" alt=""></div>
+    <div class="swiper-slide"><img src="Image/w3.jpg" alt=""></div>
+
   </div>
-  <?php
-  if (isset($_SESSION['order'])) {
-    echo $_SESSION['order'];
-    unset($_SESSION['order']);
-  }
-  ?>
+
+  <div class="swiper-pagination"></div>
+</div>
+<?php
+if (isset($_SESSION['order'])) {
+  echo $_SESSION['order'];
+  unset($_SESSION['order']);
+}
+?>
 </div>
 <div class=explore-div>
   <h3><a class="explore" href="">Explore Now</a></h3>
