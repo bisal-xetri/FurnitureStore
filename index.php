@@ -47,7 +47,6 @@ if (isset($_SESSION['username'])) {
 
 
 
-
 <div class="swiper mySwiper">
   <div class="swiper-wrapper">
     <div class="swiper-slide"><img src="Image/wallpaper3.jpg" alt="" srcset=""></div>

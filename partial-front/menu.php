@@ -38,6 +38,14 @@ if (isset($_SESSION['username'])) {
 
 
 <body>
+
+    <div class="loader ldr">
+        <h1>WELCOME</h1>
+        <h1>TO</h1>
+        <h1>THE</h1>
+        <h1>HIMALAYAN</h1>
+        <h1>FURNITURE</h1>
+    </div>
     <div class="header">
         <div class="title">
             <h1><a href="<?php echo SITEURL; ?>">Himlayan Furniture</a></h1>

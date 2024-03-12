@@ -1,3 +1,4 @@
+<?php ob_start(); ?>
 <?php include('config/constant.php') ?>
 
 <?php include('partial-front/menu.php') ?>
@@ -141,3 +142,4 @@ if (isset($_SESSION['username'])) {
     ?>
 </div>
 <?php include('partial-front/footer.php') ?>
+<?php ob_end_flush(); ?>
