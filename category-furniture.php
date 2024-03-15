@@ -1,5 +1,6 @@
 <?php include('config/constant.php'); ?>
 <?php include('partial-front/menu.php'); ?>
+
 <?php
 if (isset($_SESSION['username'])) {
     // Check if 'id' session variable is set
@@ -16,7 +17,7 @@ if (isset($_SESSION['username'])) {
                 if (mysqli_num_rows($run_cart) == 0) {
                     $cart_query = "INSERT INTO `cart`(`user_id`, `product_id`,quantity) VALUES ($custid,$p_id,1)";
                     if (mysqli_query($con, $cart_query)) {
-                        header('location:category-furniture.php');
+                        header('location: category-furniture.php?category_id=' . $_GET['category_id']);
                         exit; // Exit after redirection
                     }
                 } else {
@@ -40,6 +41,7 @@ if (isset($_SESSION['username'])) {
     echo "<script> function a(){alert('⚠️ Login is required to add this product into cart');}</script>";
 }
 ?>
+
 <?php
 //check whether id is passed 
 if (isset($_GET['category_id'])) {
@@ -50,12 +52,11 @@ if (isset($_GET['category_id'])) {
     $category_title = $count3['title'];
 } else {
     header('Location:' . SITEURL);
+    exit; // Exit after redirection
 }
 
 ?>
 <h2 style="text-align:center; margin:10px;">Available&nbsp;<span style="color:#fb5607;">"<?php echo $category_title; ?>"</span></h2>
-
-
 
 <div class="chair-type">
     <?php
@@ -85,13 +86,12 @@ if (isset($_GET['category_id'])) {
                     }
 
                     ?>
-
                 </div>
                 <div class="chair-description">
                     <p class="chair-name"><?php echo $title; ?></p>
                     <p class="chair-price">Rs.<?php echo $price; ?></p>
                     <a href="<?php echo SITEURL;  ?>order.php?furniture_id=<?php echo $id; ?>" class="buy">buy</a>
-                    <a href="category-furniture.php?cart_id=<?php echo $id; ?>" class="add-to-cart js-add-to-cart" onclick="a()">add to cart</a>
+                    <a href="category-furniture.php?cart_id=<?php echo $id; ?>&category_id=<?php echo $category_id; ?>" class="add-to-cart js-add-to-cart" onclick="a()">add to cart</a>
                 </div>
             </div>
     <?php
@@ -100,11 +100,6 @@ if (isset($_GET['category_id'])) {
         echo "<div class='error'> Furniture Not available</div>";
     }
     ?>
-
-
 </div>
-
-
-
 
 <?php include('partial-front/footer.php'); ?>

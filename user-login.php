@@ -67,12 +67,19 @@ if (isset($_POST['submit'])) {
         if ($count == 1) {
             // Fetch user data
             $row = mysqli_fetch_assoc($res);
-            $user_id = $row['id']; // Assuming 'id' is the column name for the user ID in your table
+            $user_id = $row['id'];
+            $customer_email=$row['email'] ;
+            $customer_add=$row['address'];
+            $customer_number=$row['phone'];// Assuming 'id' is the column name for the user ID in your table
 
             // Set session variables
             $_SESSION['login'] = "<div class='success'>Login Successfully</div>";
             $_SESSION['username'] = $username;
-            $_SESSION['id'] = $user_id; // Set user ID session variable
+            $_SESSION['id'] = $user_id; 
+              $_SESSION['email']=$customer_email; 
+             $_SESSION['add']=$customer_add;
+           
+             $_SESSION['number']= $customer_number;
 
             // Redirect to the appropriate page
             header("Location:" . SITEURL . "customer/index.php");

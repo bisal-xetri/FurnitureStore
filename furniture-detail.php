@@ -112,7 +112,7 @@ if (isset($_SESSION['username'])) {
             </div>
             <div class="detail-buy">
               <a href="<?php echo SITEURL;  ?>order.php?furniture_id=<?php echo $id; ?>" class="buy-option" onclick="a()">Buy</a>
-              <button class="addtocart-option" name="submit" type="submit">Add To Cart</button>
+              <button class="addtocart-option" name="submit" type="submit"  onclick="a()">Add To Cart</button>
             </div>
           </form>
         </div>
@@ -132,7 +132,7 @@ if (isset($_SESSION['username'])) {
 <h4 class='recommended-title'>Recommended for you:</h4>
 <div class="chair-type">
   <?php
-  // Check if $image_id is defined before using it
+
   if (isset($image_id)) {
     $sql2 = "SELECT * FROM tbl_furniture WHERE active='YES' AND featured='YES' AND id NOT IN (SELECT id FROM tbl_furniture WHERE id=$image_id) ORDER BY RAND() LIMIT 5";
     $res2 = mysqli_query($con, $sql2);
@@ -165,7 +165,7 @@ if (isset($_SESSION['username'])) {
               <p class="chair-name"><?php echo $title; ?></p>
               <p class="chair-price">Rs.<?php echo $price; ?></p>
               <a href="<?php echo SITEURL;  ?>order.php?furniture_id=<?php echo $id; ?>" class="buy" onclick="a()">buy</a>
-              <a href="furniture-detail.php?cart_id=<?php echo $id; ?>" class="add-to-cart js-add-to-cart" onclick="a()">add to cart</a>
+              <a href="furniture-detail.php?cart_id=<?php echo $id; ?>" class="add-to-cart" onclick="a()">add to cart</a>
             </div>
           </div>
   <?php

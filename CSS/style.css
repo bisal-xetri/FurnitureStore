@@ -11,7 +11,7 @@ body {
   background-color: rgb(219, 219, 219);
   
 }
-.loader{
+/* .loader{
   background-color: black;
   position: fixed;
   height: 100%;
@@ -60,7 +60,7 @@ body {
   100%{
       opacity: 0;
   }
-}
+} */
 .header {
   display: flex;
   align-items: center;
