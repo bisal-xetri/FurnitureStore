@@ -1,40 +1,40 @@
 .chair-type {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  margin-left: 30px;
-  margin-top: 30px;
-  row-gap: 15px;
-  margin-bottom: 30px;
+  margin-left: 3rem;
+  margin-top: 3rem;
+  row-gap: 1.5rem;
+  margin-bottom: 3rem;
 }
 .chair-name {
   font-weight: bold;
 }
 
 .chair-picture img {
-  margin-top: 5px;
-  width: 180px;
-  margin-left: 10px;
-  border-radius: 5px;
-  height: 160px;
+  margin-top: .5rem;
+  width: 18rem;
+  margin-left: 1rem;
+  border-radius: .5rem;
+  height: 16rem;
 }
 .chair-info {
-  box-shadow: 1px 1px 4px gray;
-  width: 200px;
-  border-radius: 5px;
-  padding: 10px 0;
+  box-shadow: .1rem .1rem .4rem gray;
+  width: 20rem;
+  border-radius: .5rem;
+  padding: 1rem 0;
 }
 .chair-info:hover {
   background-color: #dad7cd;
 }
 .chair-price {
-  font-size: 14px;
+  font-size: 1.4rem;
   color: rgb(104, 102, 102);
 }
 .buy {
   border: none;
-  padding: 3px 8px;
-  border-radius: 3px;
-  margin-left: 13px;
+  padding: .3rem .8rem;
+  border-radius: .3rem;
+  margin-left: 1.3rem;
   background-color: rgb(42, 187, 232);
   cursor: pointer;
   color: white;
@@ -44,9 +44,9 @@
 }
 .add-to-cart {
   border: none;
-  padding: 3px 8px;
-  border-radius: 3px;
-  margin-left: 13px;
+  padding: .3rem .8rem;
+  border-radius: .3rem;
+  margin-left: 1.3rem;
   background-color: rgb(245, 114, 36);
   cursor: pointer;
   color: white;
@@ -57,15 +57,15 @@
   background-color: rgb(207, 98, 34);
 }
 .chair-description p {
-  margin-left: 13px;
-  margin-top: 3px;
-  margin-bottom: 3px;
+  margin-left: 1.3rem;
+  margin-top: .3rem;
+  margin-bottom: .3rem;
 }
 .chair-description button {
-  margin-bottom: 8px;
+  margin-bottom: .8rem;
 }
 .seemore {
-  margin-bottom: 10px;
+  margin-bottom: 1rem;
 }
 .seemore a {
   margin-left: 51%;
@@ -74,3 +74,13 @@
 .seemore a:hover {
   text-decoration: underline;
 }
+/* @media (max-width:998px){
+  .category-container{
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+@media (max-width:778px){
+  .category-container{
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+} */

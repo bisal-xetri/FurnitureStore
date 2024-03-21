@@ -129,7 +129,7 @@ if (isset($_SESSION['username'])) {
   ?>
 </div>
 
-<h4 class='recommended-title'>Recommended for you:</h4>
+<h3 class='recommended-title'>Recommended for you:</h3>
 <div class="chair-type">
   <?php
 

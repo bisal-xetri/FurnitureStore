@@ -80,7 +80,7 @@ if (isset($_SESSION['username'])) {
                     <img class="cart-image" src="<?php echo SITEURL; ?>Image/furniture/<?php echo $img1; ?> " alt="">
                   </td>
                   <td>
-                    <h5><?php echo $title; ?></h5>
+                    <h3><?php echo $title; ?></h3>
                     <!-- <p> Dimension:</p> -->
                   </td>
                   <td>
@@ -115,8 +115,8 @@ if (isset($_SESSION['username'])) {
         <h1 class="order-detail-title">Order Detail</h1>
         <p>Subtotal:<?php echo $sub_total; ?></p>
         <p>Discount:Rs0</p>
-        <p>Shipping:<?php echo $shipping_cost; ?></p>
-        <h3>Total:Rs.<?php echo $total; ?></h3>
+        <p>Shipping:<?php echo $shipping_cost; ?></p><hr/>
+        <h2>Total:Rs.<?php echo $total; ?></h2>
       </div>
       <!--end order--->
     </div>

@@ -53,7 +53,7 @@ if (isset($_SESSION['username'])) {
         </div>
 
         <form class="search" action="<?php echo SITEURL; ?>furniture-search.php" method="POST">
-            <input class="search-box" name="search" type="search" placeholder="search" required />
+            <input class="search-box" name="search" type="search" placeholder="Find everything for your home" required />
             <button class="search-button" type="submit" name="submit">
                 <img class="search-icon" src="Image/searchicon.png" alt="" />
             </button>
@@ -63,7 +63,7 @@ if (isset($_SESSION['username'])) {
             <li><a href="<?php echo SITEURL; ?>">Home</a></li>
             <li><a href="<?php echo SITEURL; ?>products.php">Products</a></li>
             <li><a href="#">About Us</a></li>
-            <li><a href="#">Contact Us</a></li>
+            <li><a href="<?php echo SITEURL; ?>contact-us.php">Contact Us</a></li>
             <?php if (!isset($_SESSION['username'])) {
 
 

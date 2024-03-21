@@ -79,7 +79,7 @@
     <div class="checkout-main">
     
         <div class="checkout-form">
-      <h3>Shipping  Details</h3><hr>
+      <h2>Shipping  Details</h2><hr>
       <form action="" method="post">
         <label for="email"><b>Email:</b></label>
         <label><b><?php echo $customer_email;?></b></label><br><br>
@@ -94,7 +94,7 @@
         </div>
 
         <div class="checkout-cart">
-        <h3>Order Detail</h3><hr>
+        <h2>Order Detail</h2><hr>
         <?php
                   $cart = "SELECT * FROM cart WHERE user_id='$customer_id'";
                   $run  = mysqli_query($con,$cart);

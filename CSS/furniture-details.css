@@ -44,6 +44,9 @@
   border-radius: 5px;
 
 }
+.recommended-title, .detail-quantity{
+  font-size: 15px;
+}
 
 .detail-buy {
   display: flex;
